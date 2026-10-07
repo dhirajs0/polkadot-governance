@@ -9,16 +9,16 @@ Oct 8, 2026 · @Dhiraj
 | Item | Value |
 | --- | --- |
 | Chain | Kusama Asset Hub (`statemine` spec 2003002, fellows runtimes v2.3.2) |
-| This referendum | #TBD, track 1 (Whitelisted Caller) |
-| Fellowship referendum | #TBD on the Kusama relay chain, Fellows origin |
-| Call you sign to submit it | `0x5c005d0d01185e035c060000010a000000` |
+| This referendum | [#668](https://kusama.subsquare.io/referenda/668), track 1 (Whitelisted Caller) |
+| Fellowship referendum | Pending, to be submitted on the Kusama relay chain with the Fellows origin |
+| Submission call | `0x5c005d0d01185e035c060000010a000000` |
 | What it enacts | `0x5e035c060000` = `whitelist.dispatch_whitelisted_call_with_preimage(referenda.one_fewer_deciding(0))` |
 | Hash the Fellowship whitelists | `0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87` = blake2-256 of `0x5c060000` |
 | Deposits | 0.0333 KSM submission, 333.33 KSM decision |
 | Track 1 timing | 30 min prepare, up to 14 days deciding, 10 min confirm, 10 min minimum enactment |
 | Test result | 13 of 13 checks passed on a fork of live Kusama Asset Hub |
 
-Referendum numbers are assigned on submission. On 2026-10-08 the next free index on Kusama Asset Hub is 668.
+Referendum 668 was submitted on 2026-10-08 at relay block 35,567,911, and its on-chain proposal is exactly `Inline(0x5e035c060000)`. The fork run below also produced index 668, because no other referendum was submitted on Kusama Asset Hub in between.
 
 ## The problem: a Root slot held by no referendum
 
@@ -146,6 +146,7 @@ Open [Developer → Chain state](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fk
 - `decidingCount(0)` returns `1`.
 - `trackQueue(0)` returns one entry, `664`.
 - `referendumInfoFor(664)` returns `Ongoing` with `inQueue: true` and `deciding: null`.
+- `referendumInfoFor(668)` returns `Ongoing` on track 1 with proposal `Inline(0x5e035c060000)`, the bytes you decoded in step 1.
 
 Proving that no Root referendum is deciding means scanning every referendum, which step 3 does.
 
