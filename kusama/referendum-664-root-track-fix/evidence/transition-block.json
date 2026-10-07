@@ -1,0 +1,131 @@
+{
+  "number": 22276897,
+  "hash": "0x7a0d17619c6c92f0b504fd2ff701887082f402833d22dc60d971eb8ec13d8f62",
+  "parentHash": "0xf1198934dd95022ed451154240ae86059473e0dcc597d9121f9a973c952fe224",
+  "relayParent": 35564122,
+  "extrinsics": [
+    {
+      "call": "timestamp.set",
+      "signed": false
+    },
+    {
+      "call": "parachainSystem.setValidationData",
+      "signed": false
+    }
+  ],
+  "events": [
+    {
+      "phase": "Initialization",
+      "section": "referenda",
+      "method": "DecisionStarted",
+      "data": {
+        "index": "664",
+        "track": "0",
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        }
+      }
+    },
+    {
+      "phase": "Initialization",
+      "section": "scheduler",
+      "method": "Scheduled",
+      "data": {
+        "when": "35,765,703",
+        "index": "0"
+      }
+    },
+    {
+      "phase": "Initialization",
+      "section": "whitelist",
+      "method": "WhitelistedCallDispatched",
+      "data": {
+        "callHash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+        "result": {
+          "Ok": {
+            "actualWeight": {
+              "refTime": "215,744,000",
+              "proofSize": "42,428"
+            },
+            "paysFee": "Yes"
+          }
+        }
+      }
+    },
+    {
+      "phase": "Initialization",
+      "section": "scheduler",
+      "method": "Dispatched",
+      "data": {
+        "task": [
+          "35,564,118",
+          "0"
+        ],
+        "id": "0xfc5aa33fbed32a67bbdeb997f3a9fce2e3a4a1653525e116ff1a9779624e3e1a",
+        "result": "Ok"
+      }
+    },
+    {
+      "phase": "{\"applyExtrinsic\":0}",
+      "section": "system",
+      "method": "ExtrinsicSuccess",
+      "data": {
+        "dispatchInfo": {
+          "weight": {
+            "refTime": "195,242,000",
+            "proofSize": "1,493"
+          },
+          "class": "Mandatory",
+          "paysFee": "Yes"
+        }
+      }
+    },
+    {
+      "phase": "{\"applyExtrinsic\":1}",
+      "section": "system",
+      "method": "ExtrinsicSuccess",
+      "data": {
+        "dispatchInfo": {
+          "weight": {
+            "refTime": "125,000,000",
+            "proofSize": "0"
+          },
+          "class": "Mandatory",
+          "paysFee": "Yes"
+        }
+      }
+    },
+    {
+      "phase": "Finalization",
+      "section": "voterList",
+      "method": "ScoreUpdated",
+      "data": {
+        "who": "EmDkB9W7zP9LRRH9SPvod6J8N7PMinxe9pCMseoe7bJ9akG",
+        "newScore": "31,588,032,148,514"
+      }
+    },
+    {
+      "phase": "Finalization",
+      "section": "voterList",
+      "method": "ScoreUpdated",
+      "data": {
+        "who": "FyfBwaS7uDN6UBX7D8ZtMMLfZmQyK4ZuPhHtQU6XzrvxMZs",
+        "newScore": "31,895,937,470,591"
+      }
+    },
+    {
+      "phase": "Finalization",
+      "section": "voterList",
+      "method": "ScoreUpdated",
+      "data": {
+        "who": "EAXdnj6vKJ9HKkNGJ4PSchueZTcc8cNsHNUXrwxNCY6Sqmb",
+        "newScore": "31,064,430,599,856"
+      }
+    }
+  ]
+}

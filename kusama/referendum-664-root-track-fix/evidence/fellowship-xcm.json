@@ -1,0 +1,35 @@
+{
+  "whitelistCall": "0x5e002889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+  "xcm": {
+    "V5": [
+      {
+        "DescendOrigin": {
+          "X1": [
+            {
+              "Plurality": {
+                "id": "Technical",
+                "part": "Voice"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "UnpaidExecution": {
+          "weightLimit": "Unlimited",
+          "checkOrigin": null
+        }
+      },
+      {
+        "Transact": {
+          "originKind": "Xcm",
+          "fallbackMaxWeight": null,
+          "call": {
+            "encoded": "0x5e002889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87"
+          }
+        }
+      }
+    ]
+  },
+  "encoded": "0x050c0b010804002f0000060300885e002889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87"
+}

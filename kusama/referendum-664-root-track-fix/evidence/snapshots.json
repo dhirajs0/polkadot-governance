@@ -1,0 +1,596 @@
+[
+  {
+    "label": "0-pre-state",
+    "block": 22276770,
+    "hash": "0x5d3dbbf986f01763801f486be558bff2fd6dcf9af5fb1b8ff56ab8f53cbe7fff",
+    "relay": 35563614,
+    "decidingCount": {
+      "0": 1,
+      "1": 1
+    },
+    "trackQueue0": [
+      [
+        "664",
+        "1,802,000,000,000,000"
+      ]
+    ],
+    "referendum664": {
+      "Ongoing": {
+        "track": "0",
+        "origin": {
+          "system": "Root"
+        },
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "enactment": {
+          "After": "10"
+        },
+        "submitted": "35,318,657",
+        "submissionDeposit": {
+          "who": "Ggyx6maeuWuKR6RkF4UiSEANZLejTVypJ9atP6jwCVvthJj",
+          "amount": "33,333,333,333"
+        },
+        "decisionDeposit": {
+          "who": "FrRVvtUNCnLvqvJxNrKAg9KVMtS52H574NCuSv98tUwhnMn",
+          "amount": "3,333,333,333,300,000"
+        },
+        "deciding": null,
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        },
+        "inQueue": true,
+        "alarm": [
+          "35,498,569",
+          [
+            "35,498,569",
+            "0"
+          ]
+        ]
+      }
+    },
+    "fixReferendum": null,
+    "whitelistedCall": {
+      "hash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+      "present": false
+    },
+    "enactmentAgenda": null
+  },
+  {
+    "label": "1-after-submit",
+    "block": 22276771,
+    "hash": "0x64f9c0efb13411475957d3aa662159f34a43246ffd670636141b454a21f9d085",
+    "relay": 35563618,
+    "decidingCount": {
+      "0": 1,
+      "1": 1
+    },
+    "trackQueue0": [
+      [
+        "664",
+        "1,802,000,000,000,000"
+      ]
+    ],
+    "referendum664": {
+      "Ongoing": {
+        "track": "0",
+        "origin": {
+          "system": "Root"
+        },
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "enactment": {
+          "After": "10"
+        },
+        "submitted": "35,318,657",
+        "submissionDeposit": {
+          "who": "Ggyx6maeuWuKR6RkF4UiSEANZLejTVypJ9atP6jwCVvthJj",
+          "amount": "33,333,333,333"
+        },
+        "decisionDeposit": {
+          "who": "FrRVvtUNCnLvqvJxNrKAg9KVMtS52H574NCuSv98tUwhnMn",
+          "amount": "3,333,333,333,300,000"
+        },
+        "deciding": null,
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        },
+        "inQueue": true,
+        "alarm": [
+          "35,498,569",
+          [
+            "35,498,569",
+            "0"
+          ]
+        ]
+      }
+    },
+    "fixReferendum": {
+      "index": 668,
+      "info": {
+        "Ongoing": {
+          "track": "1",
+          "origin": {
+            "Origins": "WhitelistedCaller"
+          },
+          "proposal": {
+            "Inline": "0x5e035c060000"
+          },
+          "enactment": {
+            "After": "10"
+          },
+          "submitted": "35,563,618",
+          "submissionDeposit": {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "33,333,333,333"
+          },
+          "decisionDeposit": null,
+          "deciding": null,
+          "tally": {
+            "ayes": "0",
+            "nays": "0",
+            "support": "0"
+          },
+          "inQueue": false,
+          "alarm": [
+            "35,765,218",
+            [
+              "35,765,218",
+              "0"
+            ]
+          ]
+        }
+      }
+    },
+    "whitelistedCall": {
+      "hash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+      "present": false
+    },
+    "enactmentAgenda": null
+  },
+  {
+    "label": "3-after-whitelist",
+    "block": 22276773,
+    "hash": "0x3dbe7e447fdab4d4e461a0df65e8b1460b4bea77759f4623bee1643cefeba1cc",
+    "relay": 35563626,
+    "decidingCount": {
+      "0": 1,
+      "1": 1
+    },
+    "trackQueue0": [
+      [
+        "664",
+        "1,802,000,000,000,000"
+      ]
+    ],
+    "referendum664": {
+      "Ongoing": {
+        "track": "0",
+        "origin": {
+          "system": "Root"
+        },
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "enactment": {
+          "After": "10"
+        },
+        "submitted": "35,318,657",
+        "submissionDeposit": {
+          "who": "Ggyx6maeuWuKR6RkF4UiSEANZLejTVypJ9atP6jwCVvthJj",
+          "amount": "33,333,333,333"
+        },
+        "decisionDeposit": {
+          "who": "FrRVvtUNCnLvqvJxNrKAg9KVMtS52H574NCuSv98tUwhnMn",
+          "amount": "3,333,333,333,300,000"
+        },
+        "deciding": null,
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        },
+        "inQueue": true,
+        "alarm": [
+          "35,498,569",
+          [
+            "35,498,569",
+            "0"
+          ]
+        ]
+      }
+    },
+    "fixReferendum": {
+      "index": 668,
+      "info": {
+        "Ongoing": {
+          "track": "1",
+          "origin": {
+            "Origins": "WhitelistedCaller"
+          },
+          "proposal": {
+            "Inline": "0x5e035c060000"
+          },
+          "enactment": {
+            "After": "10"
+          },
+          "submitted": "35,563,618",
+          "submissionDeposit": {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "33,333,333,333"
+          },
+          "decisionDeposit": {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "333,333,333,330,000"
+          },
+          "deciding": null,
+          "tally": {
+            "ayes": "0",
+            "nays": "0",
+            "support": "0"
+          },
+          "inQueue": false,
+          "alarm": [
+            "35,563,918",
+            [
+              "35,563,918",
+              "0"
+            ]
+          ]
+        }
+      }
+    },
+    "whitelistedCall": {
+      "hash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+      "present": true
+    },
+    "enactmentAgenda": null
+  },
+  {
+    "label": "5-approved",
+    "block": 22276872,
+    "hash": "0x26d37b22cd805c73044fcdb094c90894d9af49f5c38e9615aa36b93997a9da8f",
+    "relay": 35564022,
+    "decidingCount": {
+      "0": 1,
+      "1": 2
+    },
+    "trackQueue0": [
+      [
+        "664",
+        "1,802,000,000,000,000"
+      ]
+    ],
+    "referendum664": {
+      "Ongoing": {
+        "track": "0",
+        "origin": {
+          "system": "Root"
+        },
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "enactment": {
+          "After": "10"
+        },
+        "submitted": "35,318,657",
+        "submissionDeposit": {
+          "who": "Ggyx6maeuWuKR6RkF4UiSEANZLejTVypJ9atP6jwCVvthJj",
+          "amount": "33,333,333,333"
+        },
+        "decisionDeposit": {
+          "who": "FrRVvtUNCnLvqvJxNrKAg9KVMtS52H574NCuSv98tUwhnMn",
+          "amount": "3,333,333,333,300,000"
+        },
+        "deciding": null,
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        },
+        "inQueue": true,
+        "alarm": [
+          "35,498,569",
+          [
+            "35,498,569",
+            "0"
+          ]
+        ]
+      }
+    },
+    "fixReferendum": {
+      "index": 668,
+      "info": {
+        "Approved": [
+          "35,564,018",
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "33,333,333,333"
+          },
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "333,333,333,330,000"
+          }
+        ]
+      }
+    },
+    "whitelistedCall": {
+      "hash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+      "present": true
+    },
+    "enactmentAgenda": {
+      "relayBlock": 35564118,
+      "entries": [
+        {
+          "maybeId": "0xfc5aa33fbed32a67bbdeb997f3a9fce2e3a4a1653525e116ff1a9779624e3e1a",
+          "priority": "63",
+          "call": {
+            "Inline": "0x5e035c060000"
+          },
+          "maybePeriodic": null,
+          "origin": {
+            "Origins": "WhitelistedCaller"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "label": "6-block-A",
+    "block": 22276896,
+    "hash": "0xf1198934dd95022ed451154240ae86059473e0dcc597d9121f9a973c952fe224",
+    "relay": 35564118,
+    "decidingCount": {
+      "0": 1,
+      "1": 1
+    },
+    "trackQueue0": [
+      [
+        "664",
+        "1,802,000,000,000,000"
+      ]
+    ],
+    "referendum664": {
+      "Ongoing": {
+        "track": "0",
+        "origin": {
+          "system": "Root"
+        },
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "enactment": {
+          "After": "10"
+        },
+        "submitted": "35,318,657",
+        "submissionDeposit": {
+          "who": "Ggyx6maeuWuKR6RkF4UiSEANZLejTVypJ9atP6jwCVvthJj",
+          "amount": "33,333,333,333"
+        },
+        "decisionDeposit": {
+          "who": "FrRVvtUNCnLvqvJxNrKAg9KVMtS52H574NCuSv98tUwhnMn",
+          "amount": "3,333,333,333,300,000"
+        },
+        "deciding": null,
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        },
+        "inQueue": true,
+        "alarm": [
+          "35,498,569",
+          [
+            "35,498,569",
+            "0"
+          ]
+        ]
+      }
+    },
+    "fixReferendum": {
+      "index": 668,
+      "info": {
+        "Approved": [
+          "35,564,018",
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "33,333,333,333"
+          },
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "333,333,333,330,000"
+          }
+        ]
+      }
+    },
+    "whitelistedCall": {
+      "hash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+      "present": true
+    },
+    "enactmentAgenda": {
+      "relayBlock": 35564118,
+      "entries": [
+        {
+          "maybeId": "0xfc5aa33fbed32a67bbdeb997f3a9fce2e3a4a1653525e116ff1a9779624e3e1a",
+          "priority": "63",
+          "call": {
+            "Inline": "0x5e035c060000"
+          },
+          "maybePeriodic": null,
+          "origin": {
+            "Origins": "WhitelistedCaller"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "label": "7-block-B",
+    "block": 22276897,
+    "hash": "0x7a0d17619c6c92f0b504fd2ff701887082f402833d22dc60d971eb8ec13d8f62",
+    "relay": 35564122,
+    "decidingCount": {
+      "0": 1,
+      "1": 1
+    },
+    "trackQueue0": [],
+    "referendum664": {
+      "Ongoing": {
+        "track": "0",
+        "origin": {
+          "system": "Root"
+        },
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "enactment": {
+          "After": "10"
+        },
+        "submitted": "35,318,657",
+        "submissionDeposit": {
+          "who": "Ggyx6maeuWuKR6RkF4UiSEANZLejTVypJ9atP6jwCVvthJj",
+          "amount": "33,333,333,333"
+        },
+        "decisionDeposit": {
+          "who": "FrRVvtUNCnLvqvJxNrKAg9KVMtS52H574NCuSv98tUwhnMn",
+          "amount": "3,333,333,333,300,000"
+        },
+        "deciding": {
+          "since": "35,564,118",
+          "confirming": null
+        },
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        },
+        "inQueue": false,
+        "alarm": [
+          "35,765,703",
+          [
+            "35,765,703",
+            "0"
+          ]
+        ]
+      }
+    },
+    "fixReferendum": {
+      "index": 668,
+      "info": {
+        "Approved": [
+          "35,564,018",
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "33,333,333,333"
+          },
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "333,333,333,330,000"
+          }
+        ]
+      }
+    },
+    "whitelistedCall": {
+      "hash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+      "present": false
+    },
+    "enactmentAgenda": {
+      "relayBlock": 35564118,
+      "entries": []
+    }
+  },
+  {
+    "label": "8-rewound-to-A",
+    "block": 22276896,
+    "hash": "0xf1198934dd95022ed451154240ae86059473e0dcc597d9121f9a973c952fe224",
+    "relay": 35564118,
+    "decidingCount": {
+      "0": 1,
+      "1": 1
+    },
+    "trackQueue0": [
+      [
+        "664",
+        "1,802,000,000,000,000"
+      ]
+    ],
+    "referendum664": {
+      "Ongoing": {
+        "track": "0",
+        "origin": {
+          "system": "Root"
+        },
+        "proposal": {
+          "Inline": "0x1f0003010003082f000006020300286bee02350c00184602de080000"
+        },
+        "enactment": {
+          "After": "10"
+        },
+        "submitted": "35,318,657",
+        "submissionDeposit": {
+          "who": "Ggyx6maeuWuKR6RkF4UiSEANZLejTVypJ9atP6jwCVvthJj",
+          "amount": "33,333,333,333"
+        },
+        "decisionDeposit": {
+          "who": "FrRVvtUNCnLvqvJxNrKAg9KVMtS52H574NCuSv98tUwhnMn",
+          "amount": "3,333,333,333,300,000"
+        },
+        "deciding": null,
+        "tally": {
+          "ayes": "1,802,000,000,000,000",
+          "nays": "900,000,000,000,000",
+          "support": "702,000,000,000,000"
+        },
+        "inQueue": true,
+        "alarm": [
+          "35,498,569",
+          [
+            "35,498,569",
+            "0"
+          ]
+        ]
+      }
+    },
+    "fixReferendum": {
+      "index": 668,
+      "info": {
+        "Approved": [
+          "35,564,018",
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "33,333,333,333"
+          },
+          {
+            "who": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+            "amount": "333,333,333,330,000"
+          }
+        ]
+      }
+    },
+    "whitelistedCall": {
+      "hash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87",
+      "present": true
+    },
+    "enactmentAgenda": {
+      "relayBlock": 35564118,
+      "entries": [
+        {
+          "maybeId": "0xfc5aa33fbed32a67bbdeb997f3a9fce2e3a4a1653525e116ff1a9779624e3e1a",
+          "priority": "63",
+          "call": {
+            "Inline": "0x5e035c060000"
+          },
+          "maybePeriodic": null,
+          "origin": {
+            "Origins": "WhitelistedCaller"
+          }
+        }
+      ]
+    }
+  }
+]
