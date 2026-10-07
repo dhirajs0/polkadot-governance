@@ -1,8 +1,10 @@
 # Unblocking Kusama Referendum 664: Test Report
 
-Oct 8, 2026 · @Dhiraj
+Oct 8, 2026 ·
 
 **TL;DR.** This referendum frees the Root track on Kusama Asset Hub so that referendum 664 can start its decision period. The track allows one deciding referendum, and its counter says one is deciding when none is. So 664 has been stuck in the queue. The fix is one Root call, `referenda.one_fewer_deciding(0)`, enacted through the Whitelisted Caller track once the Kusama Fellowship whitelists it. On a fork of live Kusama Asset Hub, this exact call moved 664 into Deciding and passed 13 of 13 checks. Every claim below comes with a way to check it yourself.
+
+Written using claude.
 
 ## At a glance
 
