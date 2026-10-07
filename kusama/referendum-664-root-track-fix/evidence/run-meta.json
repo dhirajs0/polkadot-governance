@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T14:29:55.098Z",
+  "endpoint": "ws://127.0.0.1:8013",
+  "forkedFrom": "wss://kusama-asset-hub-rpc.polkadot.io",
+  "runtime": "statemine v2003002",
+  "forkHead": {
+    "number": 22276769,
+    "hash": "0x6add2220fcd4b0075a368b4704d124db5079693cbcea6b5cdc88656df11bc2bc"
+  },
+  "testAccount": "HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F",
+  "calls": {
+    "submit": "0x5c005d0d01185e035c060000010a000000",
+    "proposal": "0x5e035c060000",
+    "inner": "0x5c060000",
+    "whitelistHash": "0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87"
+  },
+  "finishedAt": "2026-10-07T14:50:46.365Z",
+  "result": "PASS",
+  "fixReferendum": 668,
+  "enactmentRelayBlock": 35564118,
+  "blockA": {
+    "number": 22276896,
+    "hash": "0xf1198934dd95022ed451154240ae86059473e0dcc597d9121f9a973c952fe224"
+  },
+  "blockB": {
+    "number": 22276897,
+    "hash": "0x7a0d17619c6c92f0b504fd2ff701887082f402833d22dc60d971eb8ec13d8f62"
+  }
+}

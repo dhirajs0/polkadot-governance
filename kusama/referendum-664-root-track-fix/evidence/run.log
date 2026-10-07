@@ -1,0 +1,59 @@
+fork statemine v2003002 head 22276769 0x6add2220fcd4b0075a368b4704d124db5079693cbcea6b5cdc88656df11bc2bc | test account HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F
+
+== 0. Pre-state
+  [0-pre-state] block 22276770 relay=35563614 DecidingCount(0)=1 TrackQueue(0)=[["664","1,802,000,000,000,000"]] 664 inQueue=true deciding=null
+  PASS 664 queued behind the phantom slot
+
+== 1. Submit the prepared call (exact bytes)
+  decoded: {"args":{"proposal_origin":{"Origins":"WhitelistedCaller"},"proposal":{"Inline":"0x5e035c060000"},"enactment_moment":{"After":"10"}},"method":"submit","section":"referenda"}
+  event scheduler.Scheduled {"when":"35,765,218","index":"0"}
+  event referenda.Submitted {"index":"668","track":"1","proposal":{"Inline":"0x5e035c060000"}}
+  PASS referendum 668 submitted on track 1 with proposal 0x5e035c060000
+  [1-after-submit] block 22276771 relay=35563618 DecidingCount(0)=1 TrackQueue(0)=[["664","1,802,000,000,000,000"]] 664 inQueue=true deciding=null
+
+== 2. Decision deposit
+  event scheduler.Canceled {"when":"35,765,218","index":"0"}
+  event scheduler.Scheduled {"when":"35,563,918","index":"0"}
+  event referenda.DecisionDepositPlaced {"index":"668","who":"HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F","amount":"333,333,333,330,000"}
+  PASS decision deposit placed
+
+== 3. Fellowship whitelists the hash via XCM from the relay (DMP, origin Plurality{Technical, Voice})
+  event whitelist.CallWhitelisted {"callHash":"0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87"}
+  event messageQueue.Processed {"id":"0x688f25e9e94b98e196c52a1b743d5bf76a59501704b76088441454cb47da0f56","origin":"Parent","weightUsed":{"refTime":"131,313,000","proofSize":"3,556"},"success":true}
+  PASS downward XCM processed successfully
+  PASS WhitelistedCall(0x2889dc24…) set by the Fellowship XCM
+  [3-after-whitelist] block 22276773 relay=35563626 DecidingCount(0)=1 TrackQueue(0)=[["664","1,802,000,000,000,000"]] 664 inQueue=true deciding=null
+
+== 4. Vote aye
+  event convictionVoting.Voted {"who":"HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F","vote":{"Standard":{"vote":{"conviction":"None","vote":"Aye"},"balance":"15,000,000,000,000,000,000"}},"pollIndex":"668"}
+  event scheduler.Canceled {"when":"35,563,918","index":"0"}
+  event scheduler.Scheduled {"when":"35,563,631","index":"0"}
+
+== 5. Advance blocks until referendum 668 is approved and its enactment is scheduled
+  block 22276847 relay 35563922: referenda.DecisionStarted
+  block 22276847 relay 35563922: referenda.ConfirmStarted
+  block 22276872 relay 35564022: referenda.Confirmed
+  PASS referendum 668 approved; enactment scheduled at relay block 35564118
+  [5-approved] block 22276872 relay=35564022 DecidingCount(0)=1 TrackQueue(0)=[["664","1,802,000,000,000,000"]] 664 inQueue=true deciding=null
+
+== 6. Advance to block A: first block whose relay parent reaches the enactment block
+  [6-block-A] block 22276896 relay=35564118 DecidingCount(0)=1 TrackQueue(0)=[["664","1,802,000,000,000,000"]] 664 inQueue=true deciding=null
+  PASS 664 still queued on block A (scheduler lags one block)
+
+== 7. Block B: the enactment
+  event referenda.DecisionStarted {"index":"664","track":"0","proposal":{"Inline":"0x1f0003010003082f000006020300286bee02350c00184602de080000"},"tally":{"ayes":"1,802,000,000,000,000","nays":"900,000,000,000,000","
+  event scheduler.Scheduled {"when":"35,765,703","index":"0"}
+  event whitelist.WhitelistedCallDispatched {"callHash":"0x2889dc24ab38fab7212e6f81adde354da22e3a24fc717dbf660e52e32afecf87","result":{"Ok":{"actualWeight":{"refTime":"215,744,000","proofSize":"42,428"},"paysFee":"Yes"}}}
+  event scheduler.Dispatched {"task":["35,564,118","0"],"id":"0xfc5aa33fbed32a67bbdeb997f3a9fce2e3a4a1653525e116ff1a9779624e3e1a","result":"Ok"}
+  [7-block-B] block 22276897 relay=35564122 DecidingCount(0)=1 TrackQueue(0)=[] 664 inQueue=false deciding={"since":35564118,"confirming":null}
+  PASS scheduler dispatched the enactment task Ok
+  PASS whitelisted call dispatched Ok
+  PASS Referenda.DecisionStarted { index: 664, track: 0 }
+  PASS 664 deciding, queue empty, DecidingCount(0)=1
+  PASS whitelist entry consumed
+
+== 8. Rewind to block A and confirm the state reverts
+  [8-rewound-to-A] block 22276896 relay=35564118 DecidingCount(0)=1 TrackQueue(0)=[["664","1,802,000,000,000,000"]] 664 inQueue=true deciding=null
+  PASS rewound: 664 queued again
+
+RESULT PASS: 13/13 checks passed; block B 22276897 0x7a0d17619c6c92f0b504fd2ff701887082f402833d22dc60d971eb8ec13d8f62

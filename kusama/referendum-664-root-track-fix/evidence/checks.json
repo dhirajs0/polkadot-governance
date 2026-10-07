@@ -1,0 +1,54 @@
+[
+  {
+    "name": "664 queued behind the phantom slot",
+    "result": "PASS"
+  },
+  {
+    "name": "referendum 668 submitted on track 1 with proposal 0x5e035c060000",
+    "result": "PASS"
+  },
+  {
+    "name": "decision deposit placed",
+    "result": "PASS"
+  },
+  {
+    "name": "downward XCM processed successfully",
+    "result": "PASS"
+  },
+  {
+    "name": "WhitelistedCall(0x2889dc24…) set by the Fellowship XCM",
+    "result": "PASS"
+  },
+  {
+    "name": "referendum 668 approved; enactment scheduled at relay block 35564118",
+    "result": "PASS"
+  },
+  {
+    "name": "664 still queued on block A (scheduler lags one block)",
+    "result": "PASS"
+  },
+  {
+    "name": "scheduler dispatched the enactment task Ok",
+    "result": "PASS"
+  },
+  {
+    "name": "whitelisted call dispatched Ok",
+    "result": "PASS"
+  },
+  {
+    "name": "Referenda.DecisionStarted { index: 664, track: 0 }",
+    "result": "PASS"
+  },
+  {
+    "name": "664 deciding, queue empty, DecidingCount(0)=1",
+    "result": "PASS"
+  },
+  {
+    "name": "whitelist entry consumed",
+    "result": "PASS"
+  },
+  {
+    "name": "rewound: 664 queued again",
+    "result": "PASS"
+  }
+]
