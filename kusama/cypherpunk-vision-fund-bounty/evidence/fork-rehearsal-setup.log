@@ -1,0 +1,23 @@
+chain Kusama Asset Hub spec 2005001 head #23636604
+[1] spawner creates the pure: proxy.createPure(Any, 0, 0)
+   . proxy.PureCreated {"pure":"HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh","who":"HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F","proxyType":"Any","disambiguationIndex":"0","at":"36,036,876","extrinsicIndex":"2"}
+   PASS: createPure
+   PURE=HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh  (keep: who, disambiguationIndex, at, extrinsicIndex for killPure)
+[2] fund the pure with 0.5 KSM
+   PASS: fund pure
+[3] add W3F as Any (spawner acting as the pure)
+   . proxy.ProxyAdded {"delegator":"HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh","delegatee":"EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm","proxyType":"Any","delay":"0"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: add W3F Any
+[4] add curator multisig FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ as Governance
+   . proxy.ProxyAdded {"delegator":"HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh","delegatee":"FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ","proxyType":"Governance","delay":"0"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: add curators Governance
+[5] spawner removes itself
+   . proxy.ProxyRemoved {"delegator":"HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh","delegatee":"HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F","proxyType":"Any","delay":"0"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: remove spawner
+[6] spawner can no longer act
+   x ExtrinsicFailed proxy.NotProxy
+   PASS: spawner acts after removal (expected to fail)
+PURE=HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh CURATORS=FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ SIGNATORIES=FoQJpPyadYccjavVdTWxpxU7rUEaYhfLCPwXgkfD6Zat9QP,Fr4NzY1udSFFLzb2R3qxVQkwz9cZraWkyfH4h3mVVk7BK7P,DfnTB4z7eUvYRqcGtTpFsLC69o6tvBSC1pEv8vWPZFtCkaK THRESHOLD=2 SPAWNER=HNZata7iMYWmk5RvZRTiAsSDhV8366zq2YGb3tLH5Upf74F
