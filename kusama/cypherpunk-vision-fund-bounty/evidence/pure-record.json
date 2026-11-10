@@ -1,0 +1,46 @@
+{
+  "chain": "Kusama Asset Hub (statemine spec 2005001)",
+  "note": "PureCreated fields are the only arguments that can ever call proxy.killPure for this pure. Keep them.",
+  "pure": {
+    "address": "Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr",
+    "publicKey": "0x037a854f0918e502caa7c021a442b29bbb3d9dab4441b0b21081e7619f6c9fea"
+  },
+  "pureCreated": {
+    "who": "JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ",
+    "proxyType": "Any",
+    "disambiguationIndex": 0,
+    "at": 36037265,
+    "atNote": "relay-chain block number (Asset Hub proxy pallet uses the relay block provider)",
+    "extrinsicIndex": 2,
+    "block": 23637760,
+    "blockHash": "0xb83de403af3f0b5feb8f1a5a0d2905912fcdd92fffec306c8ef1f3944ab767cf",
+    "spawnerReserved": "6690999969"
+  },
+  "funded": {
+    "block": 23637954,
+    "from": "JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ",
+    "amount": "500000000000"
+  },
+  "w3fAddedAsAny": {
+    "block": 23638219,
+    "blockHash": "0x8ae1b77c93cdf49738de312d619943c7117dceb7fb3f97ed4ac0b79470227995",
+    "extrinsicIndex": 2,
+    "extrinsicHash": "0xb0be9b1432ba3fc5b069acfbefc36961035650a316a4bf4f50d414c8c9f7e997",
+    "signer": "JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ",
+    "call": "0x2a0000037a854f0918e502caa7c021a442b29bbb3d9dab4441b0b21081e7619f6c9fea002a01004a6e4babe3f455d9285bdf3a988e5fbcf53282ba9f2040b15241861b3bf444dc0000000000",
+    "events": ["proxy.ProxyAdded { delegatee: EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm, proxyType: Any, delay: 0 }", "proxy.ProxyExecuted { result: Ok }"]
+  },
+  "liveStateAt": {
+    "block": 23638432,
+    "proxies": [
+      { "delegate": "EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm", "proxyType": "Any", "delay": 0 },
+      { "delegate": "JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ", "proxyType": "Any", "delay": 0 }
+    ],
+    "proxyDeposit": "6701999958",
+    "pureFree": "499989000011",
+    "pureReserved": "10999989",
+    "bountyCount": 3,
+    "treasuryDot": "1599237289650026",
+    "metadataPreimageNoted": false
+  }
+}

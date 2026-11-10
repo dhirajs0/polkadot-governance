@@ -1,0 +1,43 @@
+chain Kusama Asset Hub spec 2005001 head #23636610
+[check] proxies of the pure HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh
+   EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm:Any:0
+   FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ:Governance:0
+   PASS: proxies are exactly EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm:Any:0 + FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ:Governance:0 and the spawner is gone
+   pure free balance 499989000011 planck (needs > 166666666500 curator deposit + ED)
+[meta] metadata preimage "CYPHERPUNK VISION FUND" -> 0x9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc
+   . preimage.Noted {"hash_":"0x9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc"}
+   PASS: note metadata (fork only)
+[fund] fund_bounty call (82 bytes) 0x6200050000020109020f00c0ecc376ae0500d8583f983a3c17e8d88b59284d49fa658b910c191e0ce7026c03a42e7d0e26eb9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc
+   value 1599200000000000 planck = 159920 DOT; native check = value x AssetRate
+   treasury DOT before: 1599237289650026 planck
+   . scheduler.Dispatched {"task":["36,036,901","0"],"id":null,"result":{"Err":{"Module":{"index":"98","error":"0x06000000"}}}}  => inner error multiAssetBounties.InsufficientPermission
+   PASS: enact fund_bounty with origin BigSpender (expected to fail)
+   . foreignAssets.Transferred {"assetId":{"parents":"2","interior":{"X1":[{"GlobalConsensus":"Polkadot"}]}},"from":"F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29","to":"F3opxRbN5ZbjJNU51X1e4c43R4K3YYApQV1e5zEP8Xtqkx4","amount":"1,599,200,000,000,000"}
+   . multiAssetBounties.Paid {"index":"3","childIndex":null,"paymentId":"18,446,744,073,709,551,615"}
+   . preimage.Requested {"hash_":"0x9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc"}
+   . multiAssetBounties.BountyCreated {"index":"3"}
+   . scheduler.Dispatched {"task":["36,036,909","0"],"id":null,"result":"Ok"}
+   PASS: enact fund_bounty with origin Treasurer
+   bounty index 3; treasury DOT 1599237289650026 -> 37289650026
+[status] anyone calls check_status
+   x ExtrinsicFailed multiAssetBounties.UnexpectedStatus
+   PASS: accept_curator before check_status (expected to fail)
+   . multiAssetBounties.BountyFundingProcessed {"index":"3","childIndex":null}
+   PASS: check_status
+   status {"Funded":{"curator":"HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh"}}
+[accept] the pure accepts the curator role
+   . multisig.NewMultisig {"approving":"FoQJpPyadYccjavVdTWxpxU7rUEaYhfLCPwXgkfD6Zat9QP","multisig":"FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ","callHash":"0x1d81ea21cb85ae2c3d3ab8d669e86bd0bb3256387177c891faaf1415651634f2"}
+   PASS: curators: accept_curator (approval 1/2)
+   . multiAssetBounties.BountyBecameActive {"index":"3","childIndex":null,"curator":"HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   . multisig.MultisigExecuted {"approving":"Fr4NzY1udSFFLzb2R3qxVQkwz9cZraWkyfH4h3mVVk7BK7P","timepoint":{"height":"23,636,618","index":"2"},"multisig":"FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ","callHash":"0x1d81ea21cb85ae2c3d3ab8d669e86bd0bb3256387177c891faaf1415651634f2","result":"Ok"}
+   PASS: curators: accept_curator (approval 2/2)
+[filter] Governance proxy cannot move KSM out of the pure
+   . multisig.NewMultisig {"approving":"FoQJpPyadYccjavVdTWxpxU7rUEaYhfLCPwXgkfD6Zat9QP","multisig":"FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ","callHash":"0xdc247e4012c68bc08ec1bb2088d992b78ceb7a15437be25d578c6b8265ddfd1f"}
+   PASS: curators: balances transfer (approval 1/2)
+   . proxy.ProxyExecuted {"result":{"Err":{"Module":{"index":"0","error":"0x05000000"}}}}  => inner error system.CallFiltered
+   . multisig.MultisigExecuted {"approving":"Fr4NzY1udSFFLzb2R3qxVQkwz9cZraWkyfH4h3mVVk7BK7P","timepoint":{"height":"23,636,620","index":"2"},"multisig":"FyBoTXKNYE4LSDkxWNrZvc6kfubKHb1VMpZv934shRpKbMZ","callHash":"0xdc247e4012c68bc08ec1bb2088d992b78ceb7a15437be25d578c6b8265ddfd1f","result":"Ok"}
+   PASS: curators: balances transfer (approval 2/2) (expected to fail)
+   status {"Active":{"curator":"HTz5NNvRodSTeEWkiNDZn9Tn4TTb3CBNpHSExALJpGLr1Wh"}}
+   pure holds [{"id":{"MultiAssetBounties":"CuratorDeposit"},"amount":"166,666,666,500"}]
+ALL CHECKS PASSED

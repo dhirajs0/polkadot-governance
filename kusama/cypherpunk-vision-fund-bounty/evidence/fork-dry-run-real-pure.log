@@ -1,0 +1,40 @@
+fork head #23638051, pure Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr, signer JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ
+[1] submit the exact call bytes as the spawner
+   . balances.Reserved {"who":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr","amount":"10,999,989"}
+   . proxy.ProxyAdded {"delegator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr","delegatee":"EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm","proxyType":"Any","delay":"0"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: addProxy(W3F, Any) via proxy.proxy
+   proxies [{"delegate":"EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm","proxyType":"Any","delay":"0"},{"delegate":"JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ","proxyType":"Any","delay":"0"}] deposit 6701999958
+   pure account {"free":"499,989,000,011","reserved":"10,999,989","frozen":"0","flags":"170,141,183,460,469,231,731,687,303,715,884,105,728"}
+[2] W3F (mock signature) can now act as the pure
+   . balances.Transfer {"from":"F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt","to":"HWyLYmpW68JGJYoVJcot6JQ1CJbtUQeTdxfY1kUTsvGCB1r","amount":"36,898,477"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: W3F acts as the pure
+[3] preview: enact fund_bounty as Treasurer with the real pure as curator
+   . balances.Transfer {"from":"F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt","to":"JL21EURyqQxJk9inVW7iuexJNzzuV7HpZJVxQrY8BzwFiTJ","amount":"48,981,435"}
+   . balances.Held {"reason":{"Preimage":"Preimage"},"who":"JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ","amount":"13,361,999,958"}
+   PASS: note metadata (fork only)
+   fund_bounty call 0x6200050000020109020f00c0ecc376ae0500037a854f0918e502caa7c021a442b29bbb3d9dab4441b0b21081e7619f6c9fea9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc
+   . multiAssetBounties.Paid {"index":"3","childIndex":null,"paymentId":"18,446,744,073,709,551,615"}
+   . multiAssetBounties.BountyCreated {"index":"3"}
+   . scheduler.Dispatched {"task":["36,037,375","0"],"id":null,"result":"Ok"}
+   PASS: fund_bounty as Treasurer
+   . balances.Transfer {"from":"F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt","to":"E5afBRJRt6hwi5KH3Hqpq3YPr28R96yGtYRQknxdFc3Bkb3","amount":"12,865,933"}
+   . multiAssetBounties.BountyFundingProcessed {"index":"3","childIndex":null}
+   PASS: check_status
+[4] W3F accepts the curator role for the pure
+   . balances.Transfer {"from":"F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt","to":"EPGHRDFaBbQz4uF8DgnuScxYp4rvvtpL5MTed7VvGprNQmm","amount":"30,456,085"}
+   . balances.Held {"reason":{"MultiAssetBounties":"CuratorDeposit"},"who":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr","amount":"166,666,666,500"}
+   . multiAssetBounties.BountyBecameActive {"index":"3","childIndex":null,"curator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: accept_curator via W3F
+   bounty {"assetKind":{"V5":{"location":{"parents":"0","interior":"Here"},"assetId":{"parents":"2","interior":{"X1":[{"GlobalConsensus":"Polkadot"}]}}}},"value":"1,599,200,000,000,000","metadata":"0x9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc","status":{"Active":{"curator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr"}}}
+   pure account {"free":"333,322,333,511","reserved":"166,677,666,489","frozen":"0","flags":"170,141,183,460,469,231,731,687,303,715,884,105,728"}
+[5] preview: spawner removes itself
+   . balances.Transfer {"from":"F3opxRUwkBj1LqjZ7DyiHCRh9Z4zVPLaVjoxfD5ddbip8mt","to":"EPk1wv1TvVFfsiG73YLuLAtGacfPmojyJKvmifobBzUTxFv","amount":"46,450,775"}
+   . balances.Unreserved {"who":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr","amount":"10,999,989"}
+   . proxy.ProxyRemoved {"delegator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr","delegatee":"JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ","proxyType":"Any","delay":"0"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: removeProxy(spawner)
+   proxies [{"delegate":"EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm","proxyType":"Any","delay":"0"}]
+ALL CHECKS PASSED
