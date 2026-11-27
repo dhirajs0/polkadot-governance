@@ -2,7 +2,7 @@
 
 Nov 27, 2026 · @Dhiraj
 
-**TL;DR.** Pala Labs and the curators created a 3-of-5 multisig, `Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm`. Step D4 adds it to the curator pure `Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr` as a Governance proxy. A rehearsal ran on a fork of Kusama Asset Hub as of Nov 27 (spec 2005003). It used the real pure, the real multisig and the exact proposal of [referendum 680](https://kusama.subsquare.io/referenda/680), and all 10 checks passed. D4 and D5 apply. The referendum's proposal creates bounty 3 for 159,920 DOT. The multisig accepts the curator role through its proxy. The Governance proxy cannot move KSM or change proxies. The D4 call is ready for the spawner to sign. In D5 the spawner removes itself, and it must happen before 2026-12-07 01:04 UTC. That is when referendum 680 is expected to start confirming. If approval stays at 50% or more, the bounty is created no earlier than 2026-12-10.
+**TL;DR.** Pala Labs and the curators created a 3-of-5 multisig, `Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm`. Step D4 adds it to the curator pure `Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr` as a Governance proxy. A rehearsal ran on a fork of Kusama Asset Hub as of Nov 27 (spec 2005003). It used the real pure, the real multisig and the exact proposal of [referendum 680](https://kusama.subsquare.io/referenda/680), and all 10 checks passed. D4 and D5 apply. The referendum's proposal creates bounty 3 for 159,920 DOT. The multisig accepts the curator role through its proxy. The Governance proxy cannot move KSM or change proxies. The spawner signed D4 on Nov 27 in Kusama Asset Hub [block 24,338,047, extrinsic 2](https://assethub-kusama.subscan.io/extrinsic/24338047-2), and the multisig is now a Governance proxy of the pure. In D5 the spawner removes itself, and it must happen before 2026-12-07 01:04 UTC. That is when referendum 680 is expected to start confirming. If approval stays at 50% or more, the bounty is created no earlier than 2026-12-10.
 
 How the pure was created, and why the Treasurer track is needed, is in [README.md](README.md). This report covers what happened after the referendum went live.
 
@@ -15,7 +15,7 @@ As of Kusama Asset Hub block 24,337,081 (2026-11-27 12:02 UTC):
 | L1. Note the metadata preimage | Pala Labs | Done. The text is `Cypherpunk Vision Fund`, hash `0x3b95068048f4db56db684010dfbe7d4a60f557dceeee57f05844657519a17961` | [status log](evidence/status-2026-11-27.log), I4 |
 | L2. Submit on Treasurer and place the decision deposit | Pala Labs | Done: [referendum 680](https://kusama.subsquare.io/referenda/680), deciding since relay block 36,210,121 | [status log](evidence/status-2026-11-27.log), I7 |
 | L3. Create the curator multisig | Pala Labs and curators | Done: `Hc2YA7…Jbm`, 3-of-5, holds 0.8 KSM | [status log](evidence/status-2026-11-27.log) |
-| D4. Add the multisig as Governance | Dhiraj | Call ready and rehearsed. Waiting for the spawner's signature | [D4](#d4-the-call) |
+| D4. Add the multisig as Governance | Dhiraj | Done, [block 24,338,047, extrinsic 2](https://assethub-kusama.subscan.io/extrinsic/24338047-2), 2026-11-27 12:36 UTC. `ProxyAdded` Governance and `ProxyExecuted { result: Ok }` | [status after D4](evidence/status-2026-11-27-after-d4.log) |
 | T1. Rehearse with the real addresses | Dhiraj | Done on a fork. The signatory set is not covered, see [what the test does not cover](#what-the-test-does-not-cover) | [`evidence/fork-t1-real-multisig.log`](evidence/fork-t1-real-multisig.log) |
 | D5. The spawner removes itself | Dhiraj | Pending. After the curators confirm the address, and before 2026-12-07 01:04 UTC | [D5](#d5-the-call) |
 | A1, A2. `check_status`, then `accept_curator` | Anyone, then the curators | After enactment, no earlier than 2026-12-10 01:04 UTC | [Timeline](#referendum-680-timeline) |
@@ -61,6 +61,8 @@ D4 has worked if the block contains both of these events:
 
 - `proxy.ProxyAdded { delegator: Cet4J…oJr, delegatee: Hc2YA7…Jbm, proxyType: Governance, delay: 0 }`
 - `proxy.ProxyExecuted { result: Ok }`
+
+**Live result.** The spawner submitted these exact bytes in [block 24,338,047, extrinsic 2](https://assethub-kusama.subscan.io/extrinsic/24338047-2). The block has `proxy.ProxyAdded { delegatee: Hc2YA7…Jbm, proxyType: Governance, delay: 0 }` and `proxy.ProxyExecuted { result: Ok }`, and `proxy.proxies(Cet4J…oJr)` now lists W3F Any, the multisig Governance and the spawner Any ([`evidence/status-2026-11-27-after-d4.log`](evidence/status-2026-11-27-after-d4.log)).
 
 `ExtrinsicSuccess` alone proves nothing, because `proxy.proxy` succeeds even when the inner call fails. D4 holds one more proxy deposit factor (0.000011 KSM) from the pure, and D5 releases the same amount. On the fork, the pure's reserved balance was 10,999,989 planck before D4 and again after D5.
 
@@ -151,7 +153,7 @@ The README's [enactment checks](README.md#what-must-hold-at-enactment), as of No
 
 | # | Must hold | Now |
 | --- | --- | --- |
-| I1 | The pure's proxies are exactly W3F Any and the multisig Governance | Waiting for D4 and D5 |
+| I1 | The pure's proxies are exactly W3F Any and the multisig Governance | D4 done, waiting for D5 |
 | I2 | value = 1,599,200,000,000,000 | Holds, decoded from the referendum's own preimage |
 | I3 | Treasury DOT ≥ value | Holds, 3.73 DOT spare |
 | I4 | The metadata preimage is noted | Holds, for `0x3b95…7961` (not the `0x9296…84bc` in the README) |
@@ -213,6 +215,7 @@ The [README glossary](README.md#glossary) covers pure proxy, spawner, planck, pr
 
 - [`evidence/fork-t1-real-multisig.log`](evidence/fork-t1-real-multisig.log): the T1 rehearsal, 10 of 10 checks passed, fork at block 24,337,154.
 - [`evidence/status-2026-11-27.log`](evidence/status-2026-11-27.log): live invariants and the referendum's tally at block 24,337,081.
+- [`evidence/status-2026-11-27-after-d4.log`](evidence/status-2026-11-27-after-d4.log): the same check at block 24,338,066, after D4.
 - [`referenda/src/lib.rs:1347-1358`](https://github.com/paritytech/polkadot-sdk/blob/f91ecc274e751e727256ebca4e4a09802bf4880e/substrate/frame/referenda/src/lib.rs#L1347-L1358): `is_passing` caps the elapsed time at the decision period.
 - [`referenda/src/lib.rs:1253`](https://github.com/paritytech/polkadot-sdk/blob/f91ecc274e751e727256ebca4e4a09802bf4880e/substrate/frame/referenda/src/lib.rs#L1253): a referendum that is not passing is rejected once the decision period is over.
 - [`referenda/src/lib.rs:944`](https://github.com/paritytech/polkadot-sdk/blob/f91ecc274e751e727256ebca4e4a09802bf4880e/substrate/frame/referenda/src/lib.rs#L944): enactment is no earlier than the track's minimum enactment period.

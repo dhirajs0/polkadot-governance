@@ -38,7 +38,7 @@ As of Kusama Asset Hub block 24,337,081 (2026-11-27). Details of L1 to D5 are in
 | L1. Note the metadata preimage | Pala Labs (proposer) | Done, `0x3b95…7961` | [status log](evidence/status-2026-11-27.log) |
 | L2. Submit on Treasurer and place the decision deposit | Pala Labs | Done, [referendum 680](https://kusama.subsquare.io/referenda/680) | [status log](evidence/status-2026-11-27.log) |
 | L3. Create the curator multisig | Pala Labs and curators | Done, `Hc2YA7…Jbm`, 3-of-5 | |
-| D4. Add the multisig as Governance | Dhiraj | Call ready and rehearsed, waiting for signature | [report](curator-multisig-report.md#d4-the-call) |
+| D4. Add the multisig as Governance | Dhiraj | Done | [block 24,338,047, extrinsic 2](https://assethub-kusama.subscan.io/extrinsic/24338047-2), `ProxyExecuted { result: Ok }` |
 | T1. Rehearse on a fork with the real addresses | Dhiraj and Pala Labs | Done on a fork, except the signatory set | [`evidence/fork-t1-real-multisig.log`](evidence/fork-t1-real-multisig.log) |
 | D5. Dhiraj removes himself | Dhiraj | Pending, before 2026-12-07 01:04 UTC | [report](curator-multisig-report.md#d5-the-call) |
 | A1, A2. `check_status`, then `accept_curator` | Anyone, then the curators | After enactment, no earlier than 2026-12-10 | |
