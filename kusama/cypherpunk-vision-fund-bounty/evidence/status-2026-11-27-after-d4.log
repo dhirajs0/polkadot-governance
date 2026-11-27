@@ -1,0 +1,18 @@
+Kusama Asset Hub spec 2005003, block #24338066, relay 36274630, 2026-11-27T12:36:48.000Z
+
+proxies of the pure:
+   EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm:Any:0
+   Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm:Governance:0
+   JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ:Any:0
+I1 WAIT W3F Any yes, multisig Governance yes (D4 done), spawner still present (D5 pending)
+I7 OK   referendum 680 on track 11, origin {"origins":"Treasurer"}
+I2 OK   proposal 0x42b2472aebdbad9e1252b0e0f5ee90c7ac70bdb82b792c57a49923ebad20c8cf = multiAssetBounties.fundBounty, value 1599200000000000, curator Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr
+I4 OK   metadata 0x3b95068048f4db56db684010dfbe7d4a60f557dceeee57f05844657519a17961 noted
+
+referendum 680: approval 90.91% (needs 67.35% now, 50% at the end), support 0.0000021% of active issuance (needs 34.00% now, 0% at the end)
+   confirming: no
+   decision period ends relay 36411721 (2026-12-07 01:05 UTC). If approval is still >= 50% then, confirmation runs to 36440521 (2026-12-09 01:05 UTC) and enactment is no earlier than 36454921 (2026-12-10 01:05 UTC).
+I3 OK   treasury DOT 1599237289650026 planck, 37289650026 spare after funding
+I5 OK   pure free 499978000022 planck (needs 166669999833)
+   multisig Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm free 800000000000 planck
+   multiAssetBounties.bountyCount 3 (the next bounty gets this index)

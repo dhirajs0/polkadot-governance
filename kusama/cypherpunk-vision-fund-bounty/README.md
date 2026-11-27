@@ -14,8 +14,8 @@ Nov 10, 2026 · @Dhiraj
 | Track | Treasurer (track 11). The value counts as 39,980 KSM, and Big Spender stops at 33,333 KSM. |
 | Curator (pure proxy) | `Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr` |
 | W3F (Any on the pure) | `EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm` |
-| Curator multisig (Governance on the pure) | Pending, waiting for the curators' addresses |
-| Metadata | `CYPHERPUNK VISION FUND`, blake2-256 `0x9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc` |
+| Curator multisig (Governance on the pure) | `Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm`, 3-of-5 |
+| Metadata | Suggested: `CYPHERPUNK VISION FUND`, blake2-256 `0x9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc`. Live referendum 680 uses `Cypherpunk Vision Fund`, `0x3b95068048f4db56db684010dfbe7d4a60f557dceeee57f05844657519a17961` |
 | `fund_bounty` call (82 bytes) | `0x6200050000020109020f00c0ecc376ae0500037a854f0918e502caa7c021a442b29bbb3d9dab4441b0b21081e7619f6c9fea9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc` |
 | `fund_bounty` preimage hash | `0xc780539c4c52d41e7b46f986abed51b982d039bef05913199cf25e2ef205856d`, length 82 |
 | Submission call | `0x5c005d010149016200050000020109020f00c0ecc376ae0500037a854f0918e502caa7c021a442b29bbb3d9dab4441b0b21081e7619f6c9fea9296ffa8bd941498757b92ea45776279f9d32773fc183aacb132494703c884bc0140380000` |
@@ -28,20 +28,20 @@ The submission call is `referenda.submit(Origins(Treasurer), Inline(fund_bounty)
 
 ## Status
 
-As of Kusama Asset Hub block 23,638,432:
+As of Kusama Asset Hub block 24,337,081 (2026-11-27). Details of L1 to D5 are in [curator-multisig-report.md](curator-multisig-report.md).
 
 | Step | Who | Status | Evidence |
 | --- | --- | --- | --- |
 | D1. Create the pure, `proxy.createPure(Any, 0, 0)` | Dhiraj | Done | [Block 23,637,760, extrinsic 2](https://assethub-kusama.subscan.io/extrinsic/23637760-2) |
 | D2. Fund the pure with 0.5 KSM | Dhiraj | Done | Block 23,637,954 |
 | D3. Add W3F as Any | Dhiraj | Done | [Block 23,638,219, extrinsic 2](https://assethub-kusama.subscan.io/extrinsic/23638219-2), `ProxyExecuted { result: Ok }` |
-| L1. Note the metadata preimage | Pala Labs (proposer) | Pending | |
-| L2. Submit on Treasurer and place the decision deposit | Pala Labs | Pending | |
-| L3. Create the curator multisig | Pala Labs and curators | Pending | |
-| D4. Add the multisig as Governance | Dhiraj | Pending | |
-| T1. Rehearse on a fork with the real addresses | Dhiraj and Pala Labs | Pending | |
-| D5. Dhiraj removes himself | Dhiraj | Pending | |
-| A1, A2. `check_status`, then `accept_curator` | Anyone, then the curators | After enactment | |
+| L1. Note the metadata preimage | Pala Labs (proposer) | Done, `0x3b95…7961` | [status log](evidence/status-2026-11-27.log) |
+| L2. Submit on Treasurer and place the decision deposit | Pala Labs | Done, [referendum 680](https://kusama.subsquare.io/referenda/680) | [status log](evidence/status-2026-11-27.log) |
+| L3. Create the curator multisig | Pala Labs and curators | Done, `Hc2YA7…Jbm`, 3-of-5 | |
+| D4. Add the multisig as Governance | Dhiraj | Done | [block 24,338,047, extrinsic 2](https://assethub-kusama.subscan.io/extrinsic/24338047-2), `ProxyExecuted { result: Ok }` |
+| T1. Rehearse on a fork with the real addresses | Dhiraj and Pala Labs | Done on a fork, except the signatory set | [`evidence/fork-t1-real-multisig.log`](evidence/fork-t1-real-multisig.log) |
+| D5. Dhiraj removes himself | Dhiraj | Pending, before 2026-12-07 01:04 UTC | [report](curator-multisig-report.md#d5-the-call) |
+| A1, A2. `check_status`, then `accept_curator` | Anyone, then the curators | After enactment, no earlier than 2026-12-10 | |
 
 The record of the pure's creation, which `killPure` would need, is in [`evidence/pure-record.json`](evidence/pure-record.json).
 
@@ -185,7 +185,7 @@ The cost is a 33.333 KSM decision deposit instead of 13.333 KSM. Treasurer keeps
 | I1 | The pure's proxies are exactly W3F Any and the multisig Governance, without the spawner | `proxy.proxies(Cet4J...oJr)` |
 | I2 | value = 1,599,200,000,000,000 | Decode the referendum's proposal |
 | I3 | Treasury DOT ≥ value | `foreignAssets.account({parents:2, interior:X1(GlobalConsensus(Polkadot))}, F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29)` |
-| I4 | The metadata preimage is noted | `preimage.requestStatusFor(0x9296...84bc)` is Some |
+| I4 | The metadata preimage is noted | `preimage.requestStatusFor(0x3b95...7961)` is Some (the hash referendum 680 uses) |
 | I5 | The pure has free KSM ≥ 0.1667 plus the existential deposit | `system.account(Cet4J...oJr)` |
 | I6 | The asset kind matches bounties #1 and #2 | `multiAssetBounties.bounties(1)` |
 | I7 | The referendum is on track 11 with origin Treasurer | `referenda.referendumInfoFor(<index>)` |
