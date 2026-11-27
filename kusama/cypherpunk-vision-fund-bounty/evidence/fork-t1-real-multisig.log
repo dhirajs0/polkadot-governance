@@ -1,0 +1,45 @@
+chain Kusama Asset Hub spec 2005003 head #24337154
+[0] live state
+   pure proxies EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm:Any:0 , JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ:Any:0
+   multisig Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm free 800000000000 planck
+[D4] spawner adds the multisig as Governance on the pure
+   call to submit live from JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ:
+   0x2a0000037a854f0918e502caa7c021a442b29bbb3d9dab4441b0b21081e7619f6c9fea002a0100de7a7fc1794d99892ca3bfac7b5c2a820027196403103262ceed8959618869260700000000
+   . proxy.ProxyAdded {"delegator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr","delegatee":"Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm","proxyType":"Governance","delay":"0"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: D4 addProxy(multisig, Governance, 0)
+[D5] spawner removes itself
+   call to submit live from JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ:
+   0x2a0000037a854f0918e502caa7c021a442b29bbb3d9dab4441b0b21081e7619f6c9fea002a0200fe65a6d306be82752f79eb673c076351f44a4026b082b80531af67f08a65044a0000000000
+   . proxy.ProxyRemoved {"delegator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr","delegatee":"JKssqfCAWuENDwzbEQ6mghDGWJq4uJjd7TJjTnmCGbWH8bQ","proxyType":"Any","delay":"0"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: D5 removeProxy(spawner, Any, 0)
+   x ExtrinsicFailed proxy.NotProxy
+   PASS: spawner acts through the pure after removal (expected to fail)
+   PASS: proxies are exactly W3F Any + multisig Governance -> EFuprYL5sShF5qao4F9hVRrkbutFeoAgn4HHehq4Rkx3ahm:Any:0 , Hc2YA7NqbYDxbuHy5iEwtR6LuehN9TYoNyRzqD3Dc5w3Jbm:Governance:0
+   reserved: spawner 6690999969 -> 6690999969, pure 10999989 -> 10999989
+[enact] ref 680's real proposal, dispatched as Treasurer the way referenda does
+   proposal 0x42b2472aebdbad9e1252b0e0f5ee90c7ac70bdb82b792c57a49923ebad20c8cf (82 bytes) = {"args":{"asset_kind":{"V5":{"location":{"parents":"0","interior":"Here"},"assetId":{"parents":"2","interior":{"X1":[{"GlobalConsensus":"Polkadot"}]}}}},"value":"1,599,200,000,000,000","curator":{"Id":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr"},"metadata":"0x3b95068048f4db56db684010dfbe7d4a60f557dceeee57f05844657519a17961"},"method":"fundBounty","section":"multiAssetBounties"}
+   . foreignAssets.Transferred {"assetId":{"parents":"2","interior":{"X1":[{"GlobalConsensus":"Polkadot"}]}},"from":"F3opxRbN5ZbjJNU511Kj2TLuzFcDq9BGduA9TgiECafpg29","to":"F3opxRbN5ZbjJNU51X1e4c43R4K3YYApQV1e5zEP8Xtqkx4","amount":"1,599,200,000,000,000"}
+   . multiAssetBounties.Paid {"index":"3","childIndex":null,"paymentId":"18,446,744,073,709,551,615"}
+   . multiAssetBounties.BountyCreated {"index":"3"}
+   . scheduler.Dispatched {"task":["36,274,335","0"],"id":null,"result":"Ok"}
+   PASS: fund_bounty enacts as Treasurer
+   bounty index 3
+[status] anyone calls check_status
+   . multiAssetBounties.BountyFundingProcessed {"index":"3","childIndex":null}
+   PASS: check_status
+   status {"Funded":{"curator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr"}}
+[accept] the multisig accepts through its Governance proxy
+   . multiAssetBounties.BountyBecameActive {"index":"3","childIndex":null,"curator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr"}
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: multisig: accept_curator
+   status {"Active":{"curator":"Cet4JMngBdyWr7Ug6bwp6PG4xZG4EMjSXXnjZC8jJjd8oJr"}}
+[filter] the Governance proxy cannot move KSM or change proxies
+   . proxy.ProxyExecuted {"result":{"Err":{"Module":{"index":"0","error":"0x05000000"}}}}  => inner error system.CallFiltered
+   PASS: multisig: balances transfer (expected to fail)
+   . proxy.ProxyExecuted {"result":{"Err":{"Module":{"index":"0","error":"0x05000000"}}}}  => inner error system.CallFiltered
+   PASS: multisig: addProxy (expected to fail)
+   . proxy.ProxyExecuted {"result":"Ok"}
+   PASS: W3F still controls the pure
+ALL CHECKS PASSED
